@@ -22,7 +22,7 @@ public class ThreadController {
         user.setAge(18);
         user.setName("花满楼-男");
         if (null != person && !"男".equals(person.getSex())) {
-            user.setName("花满楼-女");
+            user.setName("花满楼-李狗蛋");
         }
         return user;
     }
