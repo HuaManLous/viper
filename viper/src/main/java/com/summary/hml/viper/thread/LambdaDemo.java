@@ -1,6 +1,4 @@
-package com.summary.hml.viper.controller;
-
-import org.springframework.web.bind.annotation.RestController;
+package com.summary.hml.viper.thread;
 
 /**
  * ♪───Ｏ（≧∇≦）Ｏ────♪

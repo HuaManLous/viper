@@ -1,4 +1,4 @@
-package com.summary.hml.viper.controller;
+package com.summary.hml.viper.thread;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
