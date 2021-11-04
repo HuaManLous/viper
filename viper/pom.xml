@@ -38,23 +38,11 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 1.jedis的依赖 -->
+        <!--jedis-->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>3.2.0</version>
-        </dependency>
-
-
-        <!-- 2.springboot整合redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!--spring2.X集成redis所需common-pool2-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
         </dependency>
 
 
