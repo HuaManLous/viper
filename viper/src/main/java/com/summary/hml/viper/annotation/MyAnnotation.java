@@ -17,6 +17,7 @@ public class MyAnnotation {
     }
 }
 
+// 四个元注解
 // 注解作用位置
 @Target(value = ElementType.METHOD)
 // 注解有效范围
