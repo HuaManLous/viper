@@ -1,9 +1,6 @@
 package com.summary.hml.viper.reflection;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -15,7 +12,7 @@ import java.lang.reflect.Method;
  * @CreateTime ： 2021-11-11 17:02
  * @Description : 反射
  */
-public class ReflectionTwo {
+public class ReflectionSecond {
 
     public static void main(String[] args) throws Exception{
         Class<?> c1 = Class.forName("com.summary.hml.viper.reflection.Student");
@@ -54,20 +51,29 @@ public class ReflectionTwo {
         age.set(student,"1");
         System.out.println(student);
 
-
-        // 5.获取反射
-        /*AnnotationWithReflection annotation = c1.getAnnotation(AnnotationWithReflection.class);
-        String name2 = annotation.name();
-        System.out.println("反射获取注解的值：" + name2);*/
+        // 5.通过反射获取注解
+        Annotation[] annotations = c1.getAnnotations();
+        for (Annotation anno : annotations){
+            System.out.println("类上的注解"+anno);
+        }
 
     }
 
 }
 
+@AnnotationWithReflectionType("student类上")
 class Student{
+
+    @AnnotationWithReflectionField(name = "花满楼",value = "3")
     public String name;
 
+    @AnnotationWithReflectionField(name = "花满楼2",value = "4")
     private String age;
+
+    //@AnnotationWithReflection(name = "花满楼-自定义")
+    public void study(String name){
+        System.out.println(name + ":学习");
+    }
 
     public String getAge() {
         return age;
@@ -75,11 +81,6 @@ class Student{
 
     public void setAge(String age) {
         this.age = age;
-    }
-
-    @AnnotationWithReflection(name = "花满楼-自定义")
-    public void study(String name){
-        System.out.println(name + ":学习");
     }
 
     public Student() {
@@ -115,4 +116,18 @@ class Student{
 @Retention(value = RetentionPolicy.RUNTIME)
 @interface AnnotationWithReflection{
     String name() default "花满楼";
+}
+
+@Target(value = ElementType.TYPE)
+@Retention(value = RetentionPolicy.RUNTIME)
+@interface AnnotationWithReflectionType{
+    String value() default "类上";
+}
+
+
+@Target(value = ElementType.FIELD)
+@Retention(value = RetentionPolicy.RUNTIME)
+@interface AnnotationWithReflectionField{
+    String value() default "属性上";
+    String name() default "张三";
 }
