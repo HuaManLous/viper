@@ -10,7 +10,7 @@ package com.summary.hml.viper.lambda;
 public class LambdaDemo {
 
 
-    // 2.通过静态内部累类
+    // 2.通过静态内部类
     static class Dog implements Animal{
         @Override
         public void eat() {
