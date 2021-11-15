@@ -22,6 +22,7 @@ public class LambdaThirdListSort {
         list.add(new Person2("画满楼_05",8));
         list.add(new Person2("画满楼_06",7));
         list.add(new Person2("画满楼_07",50));
+        list.add(new Person2("画满楼_08",50));
 
         list.sort((o1,o2)->{
             // 返回正数表示前面的大
@@ -34,6 +35,7 @@ public class LambdaThirdListSort {
         list2.add(10);
         list2.add(9);
         list2.add(8);
+        list2.add(50);
         list2.add(50);
         list2.add(11);
         list2.add(12);
