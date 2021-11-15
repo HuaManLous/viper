@@ -2,7 +2,6 @@ package com.summary.hml.viper.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * ♪───Ｏ（≧∇≦）Ｏ────♪
