@@ -8,7 +8,7 @@ import java.util.TreeSet;
  *
  * @Author ： 花满楼
  * @CreateTime ： 2021-10-29 15:17
- * @Description : treeSet排序  set不可重复/无序
+ * @Description : treeSet排序
  */
 public class LambdaFourthTreeSetSort {
 
