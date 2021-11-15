@@ -11,7 +11,7 @@ import java.util.List;
  * @CreateTime ： 2021-10-29 15:17
  * @Description : lambda 集合排序
  */
-public class LambdaThird {
+public class LambdaThirdListSort {
 
     public static void main(String[] args) {
         ArrayList<Person2> list = new ArrayList<>();
