@@ -13,7 +13,6 @@ import java.util.Collections;
 public class LambdaThirdListSort {
 
     public static void main(String[] args) {
-
         ArrayList<Person2> list = new ArrayList<>();
         list.add(new Person2("画满楼_01",10));
         list.add(new Person2("画满楼_02",11));
