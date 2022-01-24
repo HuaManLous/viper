@@ -1,7 +1,8 @@
 package com.summary.hml.viper.single_table_tree;
 
+import com.summary.hml.viper.single_table_tree.tree_mapper.SingleTableTreeMapper;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.*;
 
@@ -14,7 +15,10 @@ import java.util.*;
 public class SingleTableTreeUtil {
 
 
-    public List<Map<String, Object>> getLeftSideTree(String configType) throws Exception {
+    private SingleTableTreeMapper treeMapper;
+
+
+    public List<Map<String, Object>> getSingleTableTree(String configType) throws Exception {
         if (StringUtils.isEmpty(configType)) {
             throw new Exception( "视图类型不能为空！");
         }
@@ -27,7 +31,7 @@ public class SingleTableTreeUtil {
         try {
             //获取所有的信息
             // 通过数据库查询所有的数据
-            //allList = treeMapper.getLeftSideTree(configType);
+            allList = treeMapper.getSingleTableTree(configType);
             //循环所有信息找出所有的根节点（PARENT_ID=-1）
             for (int i = 0; i < allList.size(); i++) {
                 if ("-1".equals(allList.get(i).get("PARENT_ID"))) {
@@ -75,23 +79,6 @@ public class SingleTableTreeUtil {
 
     public static void main(String[] args) {
 
-        // 数的建表语句
-        /*
-            CREATE TABLE `t_cnt_left_side_tree` (
-              `ID` varchar(64) NOT NULL,
-              `OBJECT_INDEX` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-              `CONFIG_TYPE` varchar(32) DEFAULT NULL,
-              `CONFIG_CODE` varchar(32) DEFAULT NULL,
-              `CONFIG_VALUE` varchar(32) DEFAULT NULL,
-              `PARENT_ID` varchar(64) DEFAULT NULL,
-              `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-              `CREATE_BY` varchar(32) DEFAULT NULL,
-              `UPDATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-              `UPDATE_BY` varchar(32) DEFAULT NULL,
-              `DEL_FLAG` char(1) NOT NULL DEFAULT '0',
-              `VERSION` int(11) DEFAULT NULL
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='合同左侧树表';
-        */
     }
 
 }
