@@ -22,12 +22,12 @@ public class ReflectionThird {
         }
 
         // 通过反射获取注解的值
-        Anno anno = (Anno)c.getAnnotation(Anno.class);
+        Anno anno = (Anno) c.getAnnotation(Anno.class);
         System.out.println("anno.table() = " + anno.table());
 
         // 通过反射获取注解的值
         Method eat = c.getMethod("eat");
-        AnnoByMethod annoByMethod = (AnnoByMethod)eat.getAnnotation(AnnoByMethod.class);
+        AnnoByMethod annoByMethod = (AnnoByMethod) eat.getAnnotation(AnnoByMethod.class);
         System.out.println("annoByMethod.methodName() = " + annoByMethod.methodName());
 
 
@@ -35,19 +35,19 @@ public class ReflectionThird {
 }
 
 @Anno(table = "db_table")
-class Pig{
+class Pig {
 
-    @AnnoByField(columnName = "id",type = "String",length = 3)
+    @AnnoByField(columnName = "id", type = "String", length = 3)
     private String id;
 
-    @AnnoByField(columnName = "name",type = "String",length = 3)
+    @AnnoByField(columnName = "name", type = "String", length = 3)
     private String name;
 
-    @AnnoByField(columnName = "age",type = "String",length = 3)
+    @AnnoByField(columnName = "age", type = "String", length = 3)
     private String age;
 
     @AnnoByMethod(methodName = "🐖吃食")
-    public void eat(){
+    public void eat() {
         System.out.println("吃好，睡好，玩好！！！");
     }
 
@@ -89,15 +89,15 @@ class Pig{
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@interface Anno{
-    
+@interface Anno {
+
     String table() default "tb_";
 
 }
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@interface AnnoByField{
+@interface AnnoByField {
 
     String columnName() default "id";
 
@@ -108,10 +108,9 @@ class Pig{
 }
 
 
-
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@interface AnnoByMethod{
+@interface AnnoByMethod {
 
     String methodName() default "";
 

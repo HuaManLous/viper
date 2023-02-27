@@ -8,15 +8,15 @@ package com.summary.hml.viper.lambda;
  * @Description : lambda  方法的引用
  */
 public class LambdaSecond {
-    
+
     public static void main(String[] args) {
 
         LambdaDemo1 lambdaDemo = (a) -> {
-           return  a * 2;
+            return a * 2;
         };
         // 一个参数可以去掉()
         lambdaDemo = a -> {
-            return  a * 2;
+            return a * 2;
         };
         // 有返回值时如果想去掉{}，必须去掉return
         lambdaDemo = a -> a * 2;
@@ -32,12 +32,12 @@ public class LambdaSecond {
         System.out.println("lam = " + lam);
 
         // 静态方法隶属于类
-        LambdaDemo1 lambdaDemo2 = LambdaSecond :: change;
+        LambdaDemo1 lambdaDemo2 = LambdaSecond::change;
         int lam1 = lambdaDemo2.lam(5);
         System.out.println("lam1 = " + lam1);
 
         // 普通方法隶属于对象
-        LambdaDemo1 lambdaDemo3 = new LambdaSecond() :: change2;
+        LambdaDemo1 lambdaDemo3 = new LambdaSecond()::change2;
         int lam2 = lambdaDemo3.lam(10);
         System.out.println("lam2 = " + lam2);
 
@@ -52,43 +52,45 @@ public class LambdaSecond {
         LambdaDemo2 lambdaDemo22 = Person::new;
         lambdaDemo22.getPerson();
 
-        LambdaDemo3 lambdaDemo31 = (a,b) -> new Person(a,b);
+        LambdaDemo3 lambdaDemo31 = (a, b) -> new Person(a, b);
         // 获取有参构造
         LambdaDemo3 lambdaDemo23 = Person::new;
-        lambdaDemo23.getPerson("花满楼",18);
+        lambdaDemo23.getPerson("花满楼", 18);
 
     }
-    
-    public static int change(int a){
-        return a * 2;
-    };
 
-    public int change2(int a){
+    public static int change(int a) {
         return a * 2;
-    };
-    
+    }
+
+    ;
+
+    public int change2(int a) {
+        return a * 2;
+    }
+
+    ;
+
 }
 
 
+interface LambdaDemo1 {
 
-interface LambdaDemo1{
-    
     int lam(int a);
 }
 
-interface LambdaDemo2{
+interface LambdaDemo2 {
 
     Person getPerson();
 }
 
-interface LambdaDemo3{
+interface LambdaDemo3 {
 
-    Person getPerson(String b,int a);
+    Person getPerson(String b, int a);
 }
 
 
-
-class Person{
+class Person {
 
     private String name;
     private int age;

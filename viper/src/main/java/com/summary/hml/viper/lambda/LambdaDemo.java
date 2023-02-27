@@ -11,7 +11,7 @@ public class LambdaDemo {
 
 
     // 2.通过静态内部类
-    static class Dog implements Animal{
+    static class Dog implements Animal {
         @Override
         public void eat() {
             System.out.println("==>狗吃肉🔥");
@@ -29,7 +29,7 @@ public class LambdaDemo {
         dog.eat();
 
         // 3.通过创建局部内部类
-        class Bird implements Animal{
+        class Bird implements Animal {
             @Override
             public void eat() {
                 System.out.println("==>鸟吃虫子🐛");
@@ -65,14 +65,13 @@ public class LambdaDemo {
 }
 
 
-
-interface Animal{
+interface Animal {
 
     void eat();
 }
 
 // 1.通过创建累实现接口
-class Cat implements Animal{
+class Cat implements Animal {
 
     @Override
     public void eat() {

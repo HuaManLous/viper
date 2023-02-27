@@ -51,7 +51,7 @@ public class OverrideEqualsAndHashCode {
         }
         // 判断是否属于同意类型
         // 最好不实用instanceof来判断，当存在子父关系时可能有问题
-        if (obj != null && obj.getClass() == getClass()){
+        if (obj != null && obj.getClass() == getClass()) {
             OverrideEqualsAndHashCode eh = (OverrideEqualsAndHashCode) obj;
             // 判断属性值是否一样
             if (Objects.equals(id, eh.id) && Objects.equals(num, eh.num)) {
@@ -64,9 +64,8 @@ public class OverrideEqualsAndHashCode {
     @Override
     public int hashCode() {
         // objects.hash 实际调用的是Arrays.hashCode(Objects a[])
-        return Objects.hash(id,num);
+        return Objects.hash(id, num);
     }
-
 
 
     public static void main(String[] args) {

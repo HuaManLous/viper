@@ -17,7 +17,7 @@ public class AccessTestMain {
                 throw new BaseException("未知业务异常", ErrorCode.UNKNOWN_VOCATIONAL_EXCEPTION);
             }
         }
-        
+
     }
 
 }

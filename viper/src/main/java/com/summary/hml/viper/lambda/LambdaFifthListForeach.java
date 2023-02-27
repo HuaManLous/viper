@@ -8,7 +8,8 @@ import java.util.ArrayList;
  * @Author ： 花满楼
  * @CreateTime ： 2021-10-29 15:17
  * @Description : 集合的遍历
- */public class LambdaFifthListForeach {
+ */
+public class LambdaFifthListForeach {
 
     public static void main(String[] args) {
 
@@ -19,13 +20,11 @@ import java.util.ArrayList;
         list.add("2222");
         list.add("1111");
         list.add("5555");
-        list.forEach((a)->{
+        list.forEach((a) -> {
             System.out.println("a = " + a);
         });
         // 方法的引用
         list.forEach(System.out::println);
-
-
 
 
     }

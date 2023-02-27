@@ -18,26 +18,26 @@ public class StreamDistinctDemo {
         distinct();
     }
 
-    public static void distinct(){
+    public static void distinct() {
 
         // 字符串
-        List<String> list = Arrays.asList("aa","bb","cc","dd","aa");
+        List<String> list = Arrays.asList("aa", "bb", "cc", "dd", "aa");
         List<String> collect = list.stream().distinct().collect(Collectors.toList());
         System.out.println("collect = " + collect);
 
         // 基本数据类型
-        List<Object> list2 = Arrays.asList(11,222,333,4444,11);
+        List<Object> list2 = Arrays.asList(11, 222, 333, 4444, 11);
         Object collect1 = list2.stream().distinct().collect(Collectors.toList());
         System.out.println("collect1 = " + collect1);
 
         // 引用数据类型
-        List<StreamDistinctBean> list3 = Arrays.asList(new StreamDistinctBean("张三",18),new StreamDistinctBean("张三",18),new StreamDistinctBean("张三",18),new StreamDistinctBean("张三",18) );
+        List<StreamDistinctBean> list3 = Arrays.asList(new StreamDistinctBean("张三", 18), new StreamDistinctBean("张三", 18), new StreamDistinctBean("张三", 18), new StreamDistinctBean("张三", 18));
         Object collect2 = list3.stream().distinct().collect(Collectors.toList());
         System.out.println("collect2 = " + collect2);
     }
 }
 
-class StreamDistinctBean{
+class StreamDistinctBean {
 
     private String name;
 
@@ -74,9 +74,9 @@ class StreamDistinctBean{
 
     @Override
     public boolean equals(Object obj) {
-       if (null == obj) {
-           return false;
-       }
-       return true;
+        if (null == obj) {
+            return false;
+        }
+        return true;
     }
 }

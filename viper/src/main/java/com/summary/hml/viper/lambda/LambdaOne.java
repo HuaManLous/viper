@@ -24,7 +24,6 @@ public class LambdaOne {
          */
 
 
-
         // 1.没有返回值，没有参数
         A a = () -> {
             System.out.println("没有返回值，没有参数");
@@ -38,10 +37,10 @@ public class LambdaOne {
         b.get(2);
 
         // 没有返回值，有多个参数
-        C c = (cp,cp2) -> {
+        C c = (cp, cp2) -> {
             System.out.println("没有返回值，有多个参数");
         };
-        c.get(1,1);
+        c.get(1, 1);
 
         // 有返回值，没有参数
         D d = () -> {
@@ -58,19 +57,14 @@ public class LambdaOne {
         System.out.println("s1 = " + s1);
 
         // 有返回值，有多个参数
-        F f = (fp,fp2) -> {
+        F f = (fp, fp2) -> {
             return "花满楼";
         };
         String s2 = f.get(1, 1);
         System.out.println("s2 = " + s2);
 
 
-
-
-
-
     }
-
 
 
 }
@@ -87,21 +81,21 @@ interface B {
 
 // 没有返回值，有多个参数
 interface C {
-    void get(int b,int c);
+    void get(int b, int c);
 }
 
 
 // 有返回值，没有参数
-interface  D{
+interface D {
     String get();
 }
 
 // 有返回值，有一个参数
-interface  E{
+interface E {
     String get(int e);
 }
 
 // 有返回值，有多个参数
-interface  F{
-    String get(int e,int f);
+interface F {
+    String get(int e, int f);
 }

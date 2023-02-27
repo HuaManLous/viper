@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.summary.hml.viper.ssm.mapper.tree_mapper.SingleTableTreeMapper">
+
+    <select id="getById" resultType="java.lang.String">
+        select name from user where id = #{id};
+    </select>
+
+    <!--<resultMap type="com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO" id="RiskActionMapper">
+        <id property="id" column="id"/>
+        <result property="actionName" column="action_name"/>
+        <result property="actionScript" column="action_script"/>
+        <result property="actionType" column="action_type"/>
+        <result property="actionCode" column="action_cd"/>
+        <result property="status" column="sts_flag"/>
+        <result property="isDeploy" column="rls_flag"/>
+        <result property="deleted" column="eff_flag"/>
+        <result property="modifiedBy" column="modified_by"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="gmt_create"/>
+        <result property="modifiedTime" column="gmt_modified"/>
+        <result property="desc" column="action_desc"/>
+        <result property="isSyn" column="sync_flag"/>
+        <result property="isDuplicate" column="dupl_flag"/>
+    </resultMap>
+
+
+    <select id="getByCode" resultType="com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO">
+        select
+        id,
+        action_name as actionName,
+        action_script as actionScript,
+        action_type as actionType,
+        action_cd as actionCode,
+        sts_flag as status,
+        rls_flag as isDeploy,
+        modified_by as modifiedBy,
+        create_by as createBy,
+        gmt_modified as modifiedTime,
+        gmt_create as createTime,
+        action_desc as 'desc',
+        sync_flag as isSyn,
+        dupl_flag as isDuplicate,
+        eff_flag as deleted
+        from `risk_action`
+        WHERE eff_flag='0' and rls_flag=1 and dupl_flag=0
+        and action_cd in
+        <foreach collection="codeList" index="index" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="getByIdList" resultType="com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO">
+        select
+        id,
+        action_name as actionName,
+        action_script as actionScript,
+        action_type as actionType,
+        action_cd as actionCode,
+        sts_flag as status,
+        rls_flag as isDeploy,
+        modified_by as modifiedBy,
+        create_by as createBy,
+        gmt_modified as modifiedTime,
+        gmt_create as createTime,
+        action_desc as 'desc',
+        sync_flag as isSyn,
+        dupl_flag as isDuplicate,
+        eff_flag as deleted
+        from `risk_action`
+        WHERE eff_flag = '0' and rls_flag = 1 and sts_flag = 0 and dupl_flag = 0
+        <if test="idList != null and idList.size > 0">
+            and id in
+            <foreach collection="idList" index="index" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <insert id="add" parameterType = "com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO">
+     INSERT INTO `risk_action` (`id`,`action_name`,`action_script`,`action_type`,`action_cd`,`sts_flag`,`rls_flag`,
+     `eff_flag`,`modified_by`,`create_by`,`gmt_create`,`gmt_modified`,`action_desc`,`sync_flag`,`dupl_flag`)
+     VALUES (#{id},#{actionName},#{actionScript},#{actionType},#{actionCode},#{status},#{isDeploy},
+      #{deleted},#{modifiedBy},#{createBy},NOW(),NOW(),#{desc},#{isSyn},#{isDuplicate});
+    </insert>
+
+    <select id="getById" resultType="com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO">
+        select
+        id,
+        action_name as actionName,
+        action_script as actionScript,
+        action_type as actionType,
+        action_cd as actionCode,
+        sts_flag as status,
+        rls_flag as isDeploy,
+        modified_by as modifiedBy,
+        create_by as createBy,
+        gmt_modified as modifiedTime,
+        gmt_create as createTime,
+        action_desc as 'desc',
+        sync_flag as isSyn,
+        dupl_flag as isDuplicate,
+        eff_flag as deleted
+        from `risk_action`
+        WHERE eff_flag='0' and id = #{id}
+    </select>
+
+    <select id="query" resultType="com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO">
+        select
+        id,
+        action_name as actionName,
+        action_script as actionScript,
+        action_type as actionType,
+        action_cd as actionCode,
+        sts_flag as status,
+        rls_flag as isDeploy,
+        modified_by as modifiedBy,
+        create_by as createBy,
+        gmt_modified as modifiedTime,
+        gmt_create as createTime,
+        action_desc as 'desc',
+        sync_flag as isSyn,
+        dupl_flag as isDuplicate,
+        eff_flag as deleted
+        from `risk_action`
+        WHERE eff_flag='0'
+        <if test="isDuplicate !=null">
+            and dupl_flag=#{isDuplicate}
+        </if>
+        <if test="status !=null">
+            and sts_flag=#{status}
+        </if>
+        <if test="isDeploy !=null">
+            and rls_flag=#{isDeploy}
+        </if>
+        <if test="actionCode !=null and actionCode !=''">
+            and action_cd=#{actionCode}
+        </if>
+        <if test="actionName !=null and actionName !=''">
+            and action_name like concat('%',#{actionName},'%')
+        </if>
+        order by gmt_create desc
+        limit #{pageIndex},#{pageSize}
+    </select>
+
+    <select id="total" resultType="java.lang.Integer">
+        select
+        COUNT(1)
+        from `risk_action`
+        WHERE eff_flag='0'
+        <if test="isDuplicate !=null">
+            and dupl_flag=#{isDuplicate}
+        </if>
+        <if test="status !=null">
+            and sts_flag=#{status}
+        </if>
+        <if test="isDeploy !=null">
+            and rls_flag=#{isDeploy}
+        </if>
+        <if test="actionCode !=null and actionCode !=''">
+            and action_cd=#{actionCode}
+        </if>
+        <if test="actionName !=null and actionName !=''">
+            and action_name like concat('%',#{actionName},'%')
+        </if>
+    </select>
+
+    <update id="update">
+         update risk_action
+            set
+             action_script = #{actionScript},
+             action_type = #{actionType},
+             gmt_modified = NOW(),
+             modified_by = #{modifiedBy},
+             action_desc = #{desc},
+             sync_flag = #{isSyn}
+         where id = #{id}  and eff_flag='0'
+    </update>
+
+    <select id="checkNameAndCode" resultType="java.lang.String">
+        select
+        id
+        from `risk_action`
+        WHERE
+        eff_flag='0'
+        and dupl_flag=0
+        and (action_cd = #{actionCode} or action_name = #{actionName})
+    </select>
+
+    <delete id="deleteById">
+        update `risk_action` set eff_flag='1',gmt_modified = now(), modified_by = #{operateId}
+        where id = #{id} and sts_flag=1
+    </delete>
+
+    <delete id="deleteByDuplicateId">
+        update `risk_action` set eff_flag='1',gmt_modified = now(), modified_by = #{operateId}
+        where id = #{id}
+    </delete>
+
+    <update id="disable">
+        update `risk_action` set sts_flag=1,gmt_modified = now(), modified_by = #{operateId}
+        where id = #{id} and eff_flag='0'
+    </update>
+
+    <update id="enable">
+        update `risk_action` set sts_flag=0,gmt_modified = now(), modified_by = #{operateId}
+        where id = #{id} and eff_flag='0'
+    </update>
+
+    <select id="queryRiskAction" resultType="com.aliyun.fsi.insurance.risk.base.riskdo.RiskActionDO">
+        select
+        id,
+        action_name as actionName,
+        action_script as actionScript,
+        action_type as actionType,
+        action_cd as actionCode,
+        sts_flag as status,
+        rls_flag as isDeploy,
+        modified_by as modifiedBy,
+        create_by as createBy,
+        gmt_modified as modifiedTime,
+        gmt_create as createTime,
+        action_desc as 'desc',
+        sync_flag as isSyn,
+        dupl_flag as isDuplicate,
+        eff_flag as deleted
+        from `risk_action`
+        WHERE eff_flag='0'
+        and dupl_flag=#{isDuplicate}
+        and action_cd=#{actionCode}
+    </select>
+
+    <update id="deploy">
+         update risk_action
+            set
+             id=#{id},
+             sts_flag = 0,
+             rls_flag = 1,
+             gmt_modified = NOW(),
+             modified_by = #{modifiedBy},
+             create_by = #{createBy},
+             gmt_create = #{createTime},
+             dupl_flag = 0
+         where eff_flag='0'
+         and dupl_flag=#{isDuplicate}
+         and action_cd = #{actionCode}
+    </update>
+
+    <delete id="delete">
+        update `risk_action`
+        set id = #{duplicateId},eff_flag='1',gmt_modified = now(), modified_by = #{modifiedBy}
+        where eff_flag='0'
+        and dupl_flag=0
+        and id = #{id}
+    </delete>-->
+</mapper>

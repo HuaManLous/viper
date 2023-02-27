@@ -1,7 +1,8 @@
 package com.summary.hml.viper.single_table_tree;
 
-import com.summary.hml.viper.single_table_tree.tree_mapper.SingleTableTreeMapper;
+import com.summary.hml.viper.ssm.mapper.tree_mapper.SingleTableTreeMapper;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -15,6 +16,7 @@ import java.util.*;
 public class SingleTableTreeUtil {
 
 
+    @Autowired
     private SingleTableTreeMapper treeMapper;
 
 

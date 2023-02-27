@@ -14,47 +14,47 @@ import java.lang.reflect.Method;
  */
 public class ReflectionSecond {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         Class<?> c1 = Class.forName("com.summary.hml.viper.reflection.Student");
         // 1。获取包名和类名
         String name = c1.getName();
-        System.out.println("获取类的名字(包名和类名)："+ name);
+        System.out.println("获取类的名字(包名和类名)：" + name);
         // 2。获取类名
         String simpleName = c1.getSimpleName();
-        System.out.println("获取类名:"+simpleName);
+        System.out.println("获取类名:" + simpleName);
         // 3.获得类的属性只能是public
         Field[] fields = c1.getFields();
         for (Field field : fields) {
-            System.out.println("属性:"+field);
+            System.out.println("属性:" + field);
         }
 
         // 3.获取全部属性
         Field[] declaredField = c1.getDeclaredFields();
-        for (Field f : declaredField ) {
-            System.out.println("全部属性:"+f);
+        for (Field f : declaredField) {
+            System.out.println("全部属性:" + f);
         }
 
         // 4.获取指定的属性
         Field name1 = c1.getField("name");
-        System.out.println("指定的属性："+name1);
+        System.out.println("指定的属性：" + name1);
 
         // 5.获取方法-并执行方法
         Constructor<?> constructor = c1.getConstructor();
-        Student student = (Student)constructor.newInstance();
-        Method study = c1.getMethod("study",String.class);
-        study.invoke(student,"花满楼");
+        Student student = (Student) constructor.newInstance();
+        Method study = c1.getMethod("study", String.class);
+        study.invoke(student, "花满楼");
 
         // 6.给属性赋值
         Field age = c1.getDeclaredField("age");
         // 私有要关闭
         age.setAccessible(true);
-        age.set(student,"1");
+        age.set(student, "1");
         System.out.println(student);
 
         // 5.通过反射获取注解
         Annotation[] annotations = c1.getAnnotations();
-        for (Annotation anno : annotations){
-            System.out.println("类上的注解"+anno);
+        for (Annotation anno : annotations) {
+            System.out.println("类上的注解" + anno);
         }
 
     }
@@ -62,16 +62,16 @@ public class ReflectionSecond {
 }
 
 @AnnotationWithReflectionType("student类上")
-class Student{
+class Student {
 
-    @AnnotationWithReflectionField(name = "花满楼",value = "3")
+    @AnnotationWithReflectionField(name = "花满楼", value = "3")
     public String name;
 
-    @AnnotationWithReflectionField(name = "花满楼2",value = "4")
+    @AnnotationWithReflectionField(name = "花满楼2", value = "4")
     private String age;
 
     //@AnnotationWithReflection(name = "花满楼-自定义")
-    public void study(String name){
+    public void study(String name) {
         System.out.println(name + ":学习");
     }
 
@@ -114,20 +114,21 @@ class Student{
 
 @Target(value = ElementType.METHOD)
 @Retention(value = RetentionPolicy.RUNTIME)
-@interface AnnotationWithReflection{
+@interface AnnotationWithReflection {
     String name() default "花满楼";
 }
 
 @Target(value = ElementType.TYPE)
 @Retention(value = RetentionPolicy.RUNTIME)
-@interface AnnotationWithReflectionType{
+@interface AnnotationWithReflectionType {
     String value() default "类上";
 }
 
 
 @Target(value = ElementType.FIELD)
 @Retention(value = RetentionPolicy.RUNTIME)
-@interface AnnotationWithReflectionField{
+@interface AnnotationWithReflectionField {
     String value() default "属性上";
+
     String name() default "张三";
 }

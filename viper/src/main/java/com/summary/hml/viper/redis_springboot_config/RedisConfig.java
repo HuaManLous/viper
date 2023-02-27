@@ -16,8 +16,8 @@ public class RedisConfig {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    public String testRedis(){
-        redisTemplate.opsForValue().set("key","22");
+    public String testRedis() {
+        redisTemplate.opsForValue().set("key", "22");
         return redisTemplate.opsForValue().get("key").toString();
     }
 

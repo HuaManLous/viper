@@ -1,4 +1,4 @@
-package com.summary.hml.viper.single_table_tree.tree_mapper;
+package com.summary.hml.viper.ssm.mapper.tree_mapper;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +15,7 @@ import java.util.Map;
 @Repository
 public interface SingleTableTreeMapper {
 
+    String getById(String id);
 
     List<Map<String, Object>> getSingleTableTree(String configType);
 

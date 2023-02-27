@@ -26,7 +26,7 @@ public class ReflectionOne {
     }
 }
 
-class Person{
+class Person {
     String name;
     String age;
 

@@ -26,13 +26,15 @@ public class MyAnnotation {
 @Documented
 // 子类是否继承
 @Inherited
-@interface AnnotationOne{
+@interface AnnotationOne {
 
     // 参数类型  参数名
     String value();
+
     // 默认值
     String name() default "花满楼";
+
     // 参数类型enum class String
-    String[] address() default {"上海","广州","海南"};
+    String[] address() default {"上海", "广州", "海南"};
 
 }

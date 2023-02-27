@@ -17,8 +17,8 @@ public class StreamFilterDemo {
         filter();
     }
 
-    public static void filter(){
-        List<String> list = Arrays.asList("ab","bf","cd","ef","ge","baba","mama","nainai");
+    public static void filter() {
+        List<String> list = Arrays.asList("ab", "bf", "cd", "ef", "ge", "baba", "mama", "nainai");
         List<String> f = list.stream().filter(str -> str.contains("f")).collect(Collectors.toList());
         System.out.println("f = " + f);
     }

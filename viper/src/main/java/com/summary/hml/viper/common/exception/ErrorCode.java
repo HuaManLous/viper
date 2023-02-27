@@ -10,10 +10,9 @@ package com.summary.hml.viper.common.exception;
 public enum ErrorCode {
 
 
+    UNKNOWN_SYSTEM_EXCEPTION("001", "ERROR", "系统异常"),
 
-    UNKNOWN_SYSTEM_EXCEPTION("001","ERROR","系统异常"),
-
-    UNKNOWN_VOCATIONAL_EXCEPTION("002","EXCEPTION","未知业务异常");
+    UNKNOWN_VOCATIONAL_EXCEPTION("002", "EXCEPTION", "未知业务异常");
 
     /**
      * 错误编码
@@ -31,7 +30,7 @@ public enum ErrorCode {
     private String desc;
 
     /**
-     *  日志等级
+     * 日志等级
      */
     private String codeLevel;
 
@@ -41,7 +40,7 @@ public enum ErrorCode {
     private String codeType;
 
     /**
-     *  系统错误码
+     * 系统错误码
      */
     private String systemErrorCode;
 
@@ -54,8 +53,6 @@ public enum ErrorCode {
      * 事件码
      */
     // private EventCode eventCode;
-
-
     public String getCode() {
         return code;
     }

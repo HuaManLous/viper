@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ThreadController {
 
     @RequestMapping("/first")
-    public User first(@RequestBody Person person){
+    public User first(@RequestBody Person person) {
         User user = new User();
         user.setAge(18);
         user.setName("花满楼-男");
@@ -28,9 +28,9 @@ public class ThreadController {
     }
 }
 
-class User{
-   private String name;
-   private Integer age;
+class User {
+    private String name;
+    private Integer age;
 
     public String getName() {
         return name;
@@ -57,7 +57,7 @@ class User{
     }
 }
 
-class Person{
+class Person {
     private String sex;
     private Integer age;
 

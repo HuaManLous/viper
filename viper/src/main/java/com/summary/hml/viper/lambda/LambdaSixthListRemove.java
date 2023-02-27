@@ -23,21 +23,21 @@ public class LambdaSixthListRemove {
 
         // 通过迭代的方式移除指定元素
         Iterator<String> iterator = list.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             if ("1111".equals(iterator.next())) {
-                iterator.remove();  
+                iterator.remove();
             }
         }
 
         // 通过lambda方式移除指定的元素
-        list.removeIf( e -> {
-           if (e.equals("2222")) {
-               return true;
-           }
-           return false;
+        list.removeIf(e -> {
+            if (e.equals("2222")) {
+                return true;
+            }
+            return false;
         });
 
         System.out.println("list = " + list);
     }
-    
+
 }

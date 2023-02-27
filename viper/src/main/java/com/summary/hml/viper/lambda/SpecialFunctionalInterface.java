@@ -10,7 +10,7 @@ package com.summary.hml.viper.lambda;
 public class SpecialFunctionalInterface {
 
     public static void main(String[] args) {
-        Special special = (b,c) -> {
+        Special special = (b, c) -> {
             return 1;
         };
     }
@@ -19,7 +19,7 @@ public class SpecialFunctionalInterface {
 
 // 函数式接口，只能有一个抽象方法，但是object包下的方法可以
 @FunctionalInterface
-interface  Special{
+interface Special {
 
     int compare(Object o1, Object o2);
 

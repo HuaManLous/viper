@@ -7,7 +7,7 @@ package com.summary.hml.viper.common.exception;
  * @CreateTime ： 2023-02-21 16:04
  * @Description : 自定义异常
  */
-public class BaseException extends RuntimeException{
+public class BaseException extends RuntimeException {
 
     private static final long serialVersionUID = -9012378910035579760L;
 
@@ -25,7 +25,7 @@ public class BaseException extends RuntimeException{
      * 不打印堆栈信息
      */
     @Override
-    public Throwable fillInStackTrace(){
+    public Throwable fillInStackTrace() {
         return this;
     }
 

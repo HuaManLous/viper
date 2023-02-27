@@ -15,16 +15,16 @@ public class LambdaThirdListSort {
     public static void main(String[] args) {
 
         ArrayList<Person2> list = new ArrayList<>();
-        list.add(new Person2("画满楼_01",10));
-        list.add(new Person2("画满楼_02",11));
-        list.add(new Person2("画满楼_03",12));
-        list.add(new Person2("画满楼_04",9));
-        list.add(new Person2("画满楼_05",8));
-        list.add(new Person2("画满楼_06",7));
-        list.add(new Person2("画满楼_07",50));
-        list.add(new Person2("画满楼_08",50));
+        list.add(new Person2("画满楼_01", 10));
+        list.add(new Person2("画满楼_02", 11));
+        list.add(new Person2("画满楼_03", 12));
+        list.add(new Person2("画满楼_04", 9));
+        list.add(new Person2("画满楼_05", 8));
+        list.add(new Person2("画满楼_06", 7));
+        list.add(new Person2("画满楼_07", 50));
+        list.add(new Person2("画满楼_08", 50));
 
-        list.sort((o1,o2)->{
+        list.sort((o1, o2) -> {
             // 返回正数表示前面的大
             return o1.getAge() - o2.getAge();
         });
@@ -46,7 +46,7 @@ public class LambdaThirdListSort {
         System.out.println(list2);
 
         // 通过lambda表达式方法
-        list2.sort((o1,o2) -> {
+        list2.sort((o1, o2) -> {
             return o1 - o2;
         });
         System.out.println(list2);
@@ -55,7 +55,7 @@ public class LambdaThirdListSort {
 }
 
 
-class Person2{
+class Person2 {
 
     private String name;
 
