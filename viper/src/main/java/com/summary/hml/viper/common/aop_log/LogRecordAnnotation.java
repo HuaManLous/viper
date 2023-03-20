@@ -12,17 +12,17 @@ import java.lang.annotation.*;
 @Inherited
 @Target(value = ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface myAnnotationLog {
+public @interface LogRecordAnnotation {
 
     /**
-     * 业务类型
+     * 业务类型  1：事件 2：因子 3：动作 4：策略
      *
      * @return
      */
     String bizType();
 
     /**
-     * 操作类型
+     * 操作类型 1：添加 2：修改 3：删除 4：停用 5：启用
      *
      * @return
      */
