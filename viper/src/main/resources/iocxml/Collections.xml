@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1 练习spring ioc-->
+    <bean id="collections" class="com.summary.hml.viper.spring_study.ioc.bean.SpringIocCollections" >
+        <!-- 数组 -->
+         <property name="arr" >
+             <array>
+                    <value>arr1</value>
+                    <value>arr2</value>
+                    <value>arr3</value>
+                    <value>arr4</value>
+             </array>
+         </property>
+         <!-- list<String> -->
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+                <value>list4</value>
+            </list>
+        </property>
+        <!-- List<Object> -->
+        <property name="deptList">
+            <list>
+                <!-- 方法1 -->
+                <ref bean="deptList1"></ref>
+                <ref bean="deptList2"></ref>
+                <ref bean="deptList3"></ref>
+                <!-- 方法2 -->
+                <bean id="deptList4" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+                    <property name="name" value="4"></property>
+                </bean>
+            </list>
+        </property>
+        <!-- map -->
+        <property name="map">
+            <map>
+                <entry key="k1" value="v1"></entry>
+                <entry key="k2" value="v2"></entry>
+                <entry key="k3" value="v3"></entry>
+                <entry key="k4" value="v4"></entry>
+            </map>
+        </property>
+        <!-- set -->
+        <property name="set">
+            <set>
+                <value>java</value>
+                <value>java2</value>
+                <value>java2</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="deptList1" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+        <property name="name" value="1"></property>
+    </bean>
+    <bean id="deptList2" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+        <property name="name" value="2"></property>
+    </bean>
+    <bean id="deptList3" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+        <property name="name" value="3"></property>
+    </bean>
+
+</beans>
