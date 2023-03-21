@@ -28,15 +28,15 @@ public class SpringIocMain {
         System.out.println("user = " + user);
 
         // 2 DI setter方法注入属性
-        SpringBook springBook = (SpringBook)beanFactory.getBean("springBook", SpringBook.class);
+        SpringBook springBook = beanFactory.getBean("springBook", SpringBook.class);
         System.out.println("springBook = " + springBook);
 
         // 3 DI 构造方法注入属性
-        SpringBook springBook2 = (SpringBook)beanFactory.getBean("springBook2", SpringBook.class);
+        SpringBook springBook2 = beanFactory.getBean("springBook2", SpringBook.class);
         System.out.println("springBook2 = " + springBook2);
 
         // 4 DI p命名空间方法注入属性
-        SpringBook springBook3 = (SpringBook)beanFactory.getBean("springBook3", SpringBook.class);
+        SpringBook springBook3 = beanFactory.getBean("springBook3", SpringBook.class);
         System.out.println("springBook3 = " + springBook3);
 
         // 5 注入外部bean
