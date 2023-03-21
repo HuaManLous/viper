@@ -68,12 +68,20 @@ public class Emp {
         Emp emp = applicationContext.getBean("emp", Emp.class);
         System.out.println("emp = " + JSON.toJSONString(emp));
 
+        // 1 级联赋值 通过外部bean注入方式
+        ApplicationContext cascadeAssignmentBean = new ClassPathXmlApplicationContext("iocxml/CascadeAssignmentBean.xml");
+        Emp cascadeAssignmentBeanEmp = cascadeAssignmentBean.getBean("emp", Emp.class);
+        System.out.println("emp = " + JSON.toJSONString(cascadeAssignmentBeanEmp));
+
+        // 2 级联赋值 通过外部bean注入方式
+        Emp cascadeAssignmentBeanEmp2 = cascadeAssignmentBean.getBean("emp2", Emp.class);
+        System.out.println("emp2 = " + JSON.toJSONString(cascadeAssignmentBeanEmp2, SerializerFeature.WriteNullStringAsEmpty));
+
         Map<String,Object> hashMap = new HashMap<>();
         hashMap.put("name",null);
         hashMap.put("age",18);
         // JSON.toJSONString 会去掉null值
         System.out.println("JSON.toJSONString(hashMap) = " + JSON.toJSONString(hashMap));
-
         System.out.println("JSON.toJSONString(hashMap, null) = " + JSON.toJSONString(hashMap, SerializerFeature.WriteNullStringAsEmpty));
 
     }
