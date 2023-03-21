@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--练习spring ioc-->
+    <!-- 1 练习spring ioc-->
     <bean id="user" class="com.summary.hml.viper.spring_study.ioc.SpringUser" ></bean>
 
-    <!--DI依赖注入  setter方式注入属性 类中需要加setter方法才行-->
+    <!-- 2 DI依赖注入  setter方式注入属性 类中需要加setter方法才行-->
     <bean id="springBook" class="com.summary.hml.viper.spring_study.ioc.SpringBook" >
-        <property name="name" value="修罗武神"></property>
-        <property name="bauthor" value="蜜蜂"></property>
+        <property name="name" value="修罗武神setter"></property>
+        <property name="author" value="蜜蜂setter"></property>
     </bean>
 
-    <!--DI依赖注入 构造方法注入属性 -->
+    <!-- 3 DI依赖注入 构造方法注入属性 -->
     <bean id="springBook2" class="com.summary.hml.viper.spring_study.ioc.SpringBook">
         <!-- index 表示构造参数顺序
             <constructor-arg index="0"  value="index构造方法"></constructor-arg>
             <constructor-arg index="1"  value="index构造方法"></constructor-arg>
         -->
-        <constructor-arg name="name" value="构造方法"></constructor-arg>
-        <constructor-arg name="bauthor" value="构造方法"></constructor-arg>
+        <constructor-arg name="name" value="构造方法name"></constructor-arg>
+        <constructor-arg name="author" value="构造方法author"></constructor-arg>
+    </bean>
 
+    <!-- 4 DI依赖注入  p命名空间方式注入属性 -->
+    <bean id="springBook3" class="com.summary.hml.viper.spring_study.ioc.SpringBook" p:name="p命名空间name" p:author="p命名空间author">
     </bean>
 </beans>

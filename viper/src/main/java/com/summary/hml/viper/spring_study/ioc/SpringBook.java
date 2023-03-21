@@ -11,30 +11,38 @@ public class SpringBook {
 
     private String name;
 
-    private String bauthor;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBauthor(String bauthor) {
-        this.bauthor = bauthor;
-    }
+    private String author;
 
     public String getName() {
         return name;
     }
 
-    public String getBauthor() {
-        return bauthor;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public SpringBook(){
 
     }
 
-    public SpringBook(String name, String bauthor) {
+    public SpringBook(String name, String author) {
         this.name = name;
-        this.bauthor = bauthor;
+        this.author = author;
+    }
+
+    @Override
+    public String toString() {
+        return "SpringBook{" +
+                "name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 }

@@ -21,18 +21,20 @@ public class SpringIocMain {
          */
         //BeanFactory beanFactory = new ClassPathXmlApplicationContext("iocxml/bean.xml");
         ApplicationContext beanFactory = new ClassPathXmlApplicationContext("iocxml/bean.xml");
-        // 创建对象
+        // 1 创建对象
         Object user = beanFactory.getBean("user", SpringUser.class);
         System.out.println("user = " + user);
 
-        // DI setter方法注入属性
+        // 2 DI setter方法注入属性
         SpringBook springBook = (SpringBook)beanFactory.getBean("springBook", SpringBook.class);
         System.out.println("springBook = " + springBook);
-        System.out.println("springBook = " + springBook.getName() + "-" + springBook.getBauthor());
 
-        // DI 构造方法注入属性
+        // 3 DI 构造方法注入属性
         SpringBook springBook2 = (SpringBook)beanFactory.getBean("springBook2", SpringBook.class);
         System.out.println("springBook2 = " + springBook2);
-        System.out.println("springBook2 = " + springBook2.getName() + "-" + springBook2.getBauthor());
+
+        // 4 DI p命名空间方法注入属性
+        SpringBook springBook3 = (SpringBook)beanFactory.getBean("springBook3", SpringBook.class);
+        System.out.println("springBook3 = " + springBook3);
     }
 }
