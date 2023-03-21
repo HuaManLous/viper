@@ -1,5 +1,7 @@
 package com.summary.hml.viper.spring_study.ioc;
 
+import com.summary.hml.viper.spring_study.ioc.service.UserService;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -36,5 +38,10 @@ public class SpringIocMain {
         // 4 DI p命名空间方法注入属性
         SpringBook springBook3 = (SpringBook)beanFactory.getBean("springBook3", SpringBook.class);
         System.out.println("springBook3 = " + springBook3);
+
+        // 5 注入外部bean
+        BeanFactory OutSideBeanBeanFactory = new ClassPathXmlApplicationContext("iocxml/OutSideBean.xml");
+        UserService userService = OutSideBeanBeanFactory.getBean("userService", UserService.class);
+        userService.add();
     }
 }
