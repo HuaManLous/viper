@@ -13,6 +13,16 @@ public class SpringBook {
 
     private String author;
 
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getName() {
         return name;
     }
@@ -38,11 +48,18 @@ public class SpringBook {
         this.author = author;
     }
 
+    public SpringBook(String name, String author, String address) {
+        this.name = name;
+        this.author = author;
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "SpringBook{" +
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

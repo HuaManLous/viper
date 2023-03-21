@@ -11,6 +11,10 @@
     <bean id="springBook" class="com.summary.hml.viper.spring_study.ioc.SpringBook" >
         <property name="name" value="修罗武神setter"></property>
         <property name="author" value="蜜蜂setter"></property>
+        <!-- null值 -->
+        <property name="address">
+            <null></null>
+        </property>
     </bean>
 
     <!-- 3 DI依赖注入 构造方法注入属性 -->
