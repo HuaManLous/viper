@@ -11,9 +11,16 @@
     <bean id="springBook" class="com.summary.hml.viper.spring_study.ioc.SpringBook" >
         <property name="name" value="修罗武神setter"></property>
         <property name="author" value="蜜蜂setter"></property>
-        <!-- null值 -->
-        <property name="address">
+        <!-- 2.1 null值 -->
+        <property name="price">
             <null></null>
+        </property>
+        <!-- 2.2 包含特殊符号
+            <>  &lt; &gt;
+                把特殊符号写到CDATA中去
+        -->
+        <property name="address" value="&lt;&lt;南京&gt;&gt;">
+            <!--<value><![CDATA[<<南京>>]]></value>-->
         </property>
     </bean>
 

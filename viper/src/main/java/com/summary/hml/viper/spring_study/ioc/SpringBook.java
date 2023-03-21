@@ -15,6 +15,16 @@ public class SpringBook {
 
     private String address;
 
+    private String price;
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -54,12 +64,20 @@ public class SpringBook {
         this.address = address;
     }
 
+    public SpringBook(String name, String author, String address, String price) {
+        this.name = name;
+        this.author = author;
+        this.address = address;
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "SpringBook{" +
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", address='" + address + '\'' +
+                ", price='" + price + '\'' +
                 '}';
     }
 }
