@@ -3,6 +3,7 @@ package com.summary.hml.viper.spring_study.ioc.bean;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.junit.Test;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -75,5 +76,9 @@ public class SpringIocCollections {
         SpringIocCollections springIocCollections = applicationContext.getBean("collections", SpringIocCollections.class);
         // set 无序不可重复 可存null值
         System.out.println("springIocCollections = " + JSON.toJSONString(springIocCollections, SerializerFeature.WriteNullStringAsEmpty));
+
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("iocxml/CollectionsTiQu.xml");
+        SpringIocCollections springIocCollectionsTiQu = beanFactory.getBean("springIocCollectionsTiQu", SpringIocCollections.class);
+        System.out.println("springIocCollectionsTiQu = " + JSON.toJSONString(springIocCollectionsTiQu, SerializerFeature.WriteNullStringAsEmpty));
     }
 }
