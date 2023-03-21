@@ -11,4 +11,15 @@
         <property name="name" value="修罗武神"></property>
         <property name="bauthor" value="蜜蜂"></property>
     </bean>
+
+    <!--DI依赖注入 构造方法注入属性 -->
+    <bean id="springBook2" class="com.summary.hml.viper.spring_study.ioc.SpringBook">
+        <!-- index 表示构造参数顺序
+            <constructor-arg index="0"  value="index构造方法"></constructor-arg>
+            <constructor-arg index="1"  value="index构造方法"></constructor-arg>
+        -->
+        <constructor-arg name="name" value="构造方法"></constructor-arg>
+        <constructor-arg name="bauthor" value="构造方法"></constructor-arg>
+
+    </bean>
 </beans>
