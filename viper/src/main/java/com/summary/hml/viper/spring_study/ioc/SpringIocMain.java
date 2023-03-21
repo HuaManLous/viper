@@ -16,7 +16,10 @@ public class SpringIocMain {
         // 加载配置文件
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("iocxml/bean.xml");
         // 创建对象
-        Object user = beanFactory.getBean("user", User.class);
+        Object user = beanFactory.getBean("user", SpringUser.class);
         System.out.println("user = " + user);
+        SpringBook springBook = (SpringBook)beanFactory.getBean("springBook", SpringBook.class);
+        System.out.println("springBook = " + springBook);
+        System.out.println("springBook = " + springBook.getName() + "-" + springBook.getBauthor());
     }
 }

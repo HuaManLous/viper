@@ -4,6 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--练习spring ioc-->
-    <bean id="user" class="com.summary.hml.viper.spring_study.ioc.User" ></bean>
+    <bean id="user" class="com.summary.hml.viper.spring_study.ioc.SpringUser" ></bean>
 
+    <!--DI依赖注入  setter方式注入属性 类中需要加setter方法才行-->
+    <bean id="springBook" class="com.summary.hml.viper.spring_study.ioc.SpringBook" >
+        <property name="name" value="修罗武神"></property>
+        <property name="bauthor" value="蜜蜂"></property>
+    </bean>
 </beans>
