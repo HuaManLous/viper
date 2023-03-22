@@ -6,4 +6,7 @@
     <!-- 创建bean-->
     <bean id="myBean" class="com.summary.hml.viper.spring_study.ioc.bean.MyBean" ></bean>
 
+    <!-- -->
+    <bean id="myBeanSingle" class="com.summary.hml.viper.spring_study.ioc.bean.MyBeanSingle" ></bean>
+
 </beans>
