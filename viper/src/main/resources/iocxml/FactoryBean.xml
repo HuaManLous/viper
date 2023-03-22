@@ -6,7 +6,10 @@
     <!-- 创建bean-->
     <bean id="myBean" class="com.summary.hml.viper.spring_study.ioc.bean.MyBean" ></bean>
 
-    <!-- -->
-    <bean id="myBeanSingle" class="com.summary.hml.viper.spring_study.ioc.bean.MyBeanSingle" ></bean>
+    <!-- scope 设置是单实例还是多实例
+         singleton  单实例
+         prototype  多实例
+    -->
+    <bean id="myBeanSingle" class="com.summary.hml.viper.spring_study.ioc.bean.MyBeanSingle" scope="prototype"></bean>
 
 </beans>
