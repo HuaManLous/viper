@@ -21,7 +21,12 @@ public class UserProxy {
      * execution(* com.summary.hml.viper.spring_study.aop.aopanno.User.add(..))
      */
 
-    @Before(value = "execution(* com.summary.hml.viper.spring_study.aop.aopanno.User.add(..))")
+    @Pointcut(value = "execution(* com.summary.hml.viper.spring_study.aop.aopanno.User.add(..))")
+    public void pointCut() {
+
+    }
+
+    @Before(value = "pointCut()")
     public void before() {
         System.out.println("before ......");
     }
