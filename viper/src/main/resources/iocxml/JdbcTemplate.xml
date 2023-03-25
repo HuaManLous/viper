@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1 练习spring ioc-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="url" value = "jdbc:mysql://localhost:3306/viper"/>
+        <property name="username" value = "root"/>
+        <property name="password" value = "215125"/>
+        <property name="driverClassName" value = "com.mysql.cj.jdbc.Driver"/>
+    </bean>
+
+    <bean id = "jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" >
+        <property name="dataSource" ref="dataSource"/>
+
+    </bean>
+
+</beans>
