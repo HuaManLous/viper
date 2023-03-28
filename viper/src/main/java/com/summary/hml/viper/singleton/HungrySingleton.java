@@ -35,7 +35,7 @@ public class HungrySingleton implements Serializable {
      * 虽然增加readResolve()方法返回实例解决了单例模式被破坏的问题，
      *     但是实际上实例化了两次，只不过新创建的对象没有被返回而已。
      */
-    private Object readResolve() throws ObjectStreamException {
+    private HungrySingleton readResolve() throws ObjectStreamException {
         return hungrySingleton;
     }
 
