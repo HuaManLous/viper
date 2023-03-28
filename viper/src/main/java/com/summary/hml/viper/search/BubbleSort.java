@@ -1,4 +1,4 @@
-package com.summary.hml.viper.bubblesort;
+package com.summary.hml.viper.search;
 
 import java.util.Arrays;
 
