@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--configuration status与monitorInterval采用默认值 -->
+<Configuration>
+    <properties>
+        <property name="log_root">/Users/xuchao/001_application_data/005_viperLog_data</property>
+        <property name="app_name">viper</property>
+        <property name="log_level">info</property>
+    </properties>
+
+    <!--定义appender -->
+    <Appenders>
+        <!--输出控制台的配置 -->
+        <Console name="STDOUT-APPENDER" target="SYSTEM_OUT">
+            <!--控制台输出日志格式-->
+            <!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS},%t,%r,%c{2},%-5p  - %m%n%throwable" charset="UTF-8"/>-->
+            <!--            <PatternLayout pattern="%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} %processId -&#45;&#45; [%15.15t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}" charset="UTF-8"/>-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS},%t,%r,%c{2},%-5p  - %m%n%throwable" charset="UTF-8"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <AsyncLogger name="STDOUT" additivity="false" level="${log_level}">
+            <AppenderRef ref="STDOUT-APPENDER"/>
+        </AsyncLogger>
+    </Loggers>
+
+</Configuration>

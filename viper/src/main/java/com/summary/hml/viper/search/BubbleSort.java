@@ -15,21 +15,7 @@ public class BubbleSort {
 
         int[] arr = random();
         System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));
-        for (int i = 0; i < arr.length - 1; i++) {
-            boolean flag = false;
-            for (int j = 0; j < arr.length - i - 1; j++) {
-              if (arr[j] > arr[j+1]) {
-                  int temp = arr[j+1];
-                  arr[j+1] = arr[j];
-                  arr[j] = temp;
-                  flag = true;
-              }
-            }
-
-            if (flag = false) {
-               break;
-            }
-        }
+        bubbleSort(arr);
 
         for (int value : arr) {
             System.out.println("arr = " + value);
@@ -44,5 +30,22 @@ public class BubbleSort {
             arr[i] = (int) (Math.random() * 44 + 6);
         }
         return arr;
+    }
+
+    public static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            boolean flag = false;
+            for (int j = 0; j < arr.length - i -1; j++) {
+                if (arr[j] >= arr[j+1]) {
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
+                    flag = true;
+                }
+            }
+            if (!flag) {
+                break;
+            }
+        }
     }
 }
