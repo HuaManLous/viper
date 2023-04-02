@@ -40,7 +40,7 @@ public class JedisPhoneCode {
 
     // 2.通过手机号获取验证码
     public static String getCodeByPhone(String phone) {
-        Jedis jedis = new Jedis("172.21.64.184", 6379);
+        Jedis jedis = new Jedis("192.168.0.104", 6379);
         jedis.auth("215125");
         String code = getSixCode().toString();
         if (null != jedis.get("phone:count") && Integer.parseInt(jedis.get("phone:count")) >= 3) {
@@ -57,7 +57,7 @@ public class JedisPhoneCode {
 
     // 3.通过手机号，验证码判断是否正确
     public static boolean prove(String phone, String code) {
-        Jedis jedis = new Jedis("172.21.64.184", 6379);
+        Jedis jedis = new Jedis("172.0.0.1", 6379);
         jedis.auth("215125");
         String sixCode = jedis.get(phone);
         if (null != code && code.equals(sixCode)) {

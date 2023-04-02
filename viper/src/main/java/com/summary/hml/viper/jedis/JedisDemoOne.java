@@ -15,7 +15,7 @@ public class JedisDemoOne {
 
     public static void main(String[] args) {
         // 创建Jedis的对象
-        Jedis jedis = new Jedis("172.21.64.184", 6379);
+        Jedis jedis = new Jedis("192.168.0.104", 6379);
         // 账号密码
         jedis.auth("215125");
         // 测试是否连接成功
