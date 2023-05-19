@@ -19,7 +19,7 @@ public class LazyDoubleCheckSingleton {
     private LazyDoubleCheckSingleton() { }
 
     // 提供私有的静态对象实例
-    private static LazyDoubleCheckSingleton lazySingleton = null;
+    private volatile static LazyDoubleCheckSingleton lazySingleton = null;
 
     // 提供公有的静态获取实例的方法
     public static LazyDoubleCheckSingleton getInstance() {
