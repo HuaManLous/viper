@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestEnvironmentValueConfigurationPropertiesMain {
 
     /**
-     *  a.使用 @Value 读取配置文件
-     *      1) 必须在注入spring容器的类中（@controller @service @Repository @Componment使用
-     *      2） 不能用于静态
-     *      3） 不能用于常量
-     *      3） 使用@value配置的类不能通过new对象，只能通过注入的方式
-     *  b.使用 @ConfigurationProperties 读取配置文件
-     *  c.使用 Environment 读取配置文件
+     * a.使用 @Value 读取配置文件
+     * 1) 必须在注入spring容器的类中（@controller @service @Repository @Componment使用
+     * 2） 不能用于静态
+     * 3） 不能用于常量
+     * 3） 使用@value配置的类不能通过new对象，只能通过注入的方式
+     * b.使用 @ConfigurationProperties 读取配置文件
+     * c.使用 Environment 读取配置文件
      */
-    
+
     @Value("${spring.environment.name}")
     private String a;
     @Value("${spring.environment.test}")
@@ -33,7 +33,7 @@ public class TestEnvironmentValueConfigurationPropertiesMain {
 
     @Autowired
     private Environment environment;
-    
+
     @Autowired
     private TestEnvironmentValueConfigurationPropertiesConfiguration testEnvironmentValueConfigurationPropertiesConfiguration;
 
@@ -41,7 +41,7 @@ public class TestEnvironmentValueConfigurationPropertiesMain {
     private TestConfigurationPropertiesMethod testConfigurationPropertiesMethod;
 
     @RequestMapping("use")
-    public String get(){
+    public String get() {
         // 通过configurationProperties注释在类上生效
         String datasourceUrl = testEnvironmentValueConfigurationPropertiesConfiguration.getUrl();
         System.out.println("datasourceUrl = " + datasourceUrl);
