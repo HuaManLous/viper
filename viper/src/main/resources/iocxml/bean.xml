@@ -5,10 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 1 练习spring ioc-->
-    <bean id="user" class="com.summary.hml.viper.spring_study.ioc.SpringUser" ></bean>
+    <bean id="user" class="com.summary.hml.viper.springstudy.ioc.SpringUser" ></bean>
 
     <!-- 2 DI依赖注入  setter方式注入属性 类中需要加setter方法才行-->
-    <bean id="springBook" class="com.summary.hml.viper.spring_study.ioc.SpringBook" >
+    <bean id="springBook" class="com.summary.hml.viper.springstudy.ioc.SpringBook" >
         <property name="name" value="修罗武神setter"></property>
         <property name="author" value="蜜蜂setter"></property>
         <!-- 2.1 null值 -->
@@ -25,7 +25,7 @@
     </bean>
 
     <!-- 3 DI依赖注入 构造方法注入属性 -->
-    <bean id="springBook2" class="com.summary.hml.viper.spring_study.ioc.SpringBook">
+    <bean id="springBook2" class="com.summary.hml.viper.springstudy.ioc.SpringBook">
         <!-- index 表示构造参数顺序
             <constructor-arg index="0"  value="index构造方法"></constructor-arg>
             <constructor-arg index="1"  value="index构造方法"></constructor-arg>
@@ -35,6 +35,6 @@
     </bean>
 
     <!-- 4 DI依赖注入  p命名空间方式注入属性 -->
-    <bean id="springBook3" class="com.summary.hml.viper.spring_study.ioc.SpringBook" p:name="p命名空间name" p:author="p命名空间author">
+    <bean id="springBook3" class="com.summary.hml.viper.springstudy.ioc.SpringBook" p:name="p命名空间name" p:author="p命名空间author">
     </bean>
 </beans>

@@ -11,7 +11,7 @@
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 注解基础包 -->
-    <context:component-scan base-package="com.summary.hml.viper.spring_study"/>
+    <context:component-scan base-package="com.summary.hml.viper.springstudy"/>
 
     <!-- 生成代理类 -->
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>

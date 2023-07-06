@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 1 练习spring ioc-->
-    <bean id="collections" class="com.summary.hml.viper.spring_study.ioc.bean.SpringIocCollections" >
+    <bean id="collections" class="com.summary.hml.viper.springstudy.ioc.bean.SpringIocCollections" >
         <!-- 数组 -->
          <property name="arr" >
              <array>
@@ -31,7 +31,7 @@
                 <ref bean="deptList2"></ref>
                 <ref bean="deptList3"></ref>
                 <!-- 方法2 -->
-                <bean id="deptList4" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+                <bean id="deptList4" class="com.summary.hml.viper.springstudy.ioc.bean.Dept" >
                     <property name="name" value="4"></property>
                 </bean>
             </list>
@@ -55,13 +55,13 @@
         </property>
     </bean>
 
-    <bean id="deptList1" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+    <bean id="deptList1" class="com.summary.hml.viper.springstudy.ioc.bean.Dept" >
         <property name="name" value="1"></property>
     </bean>
-    <bean id="deptList2" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+    <bean id="deptList2" class="com.summary.hml.viper.springstudy.ioc.bean.Dept" >
         <property name="name" value="2"></property>
     </bean>
-    <bean id="deptList3" class="com.summary.hml.viper.spring_study.ioc.bean.Dept" >
+    <bean id="deptList3" class="com.summary.hml.viper.springstudy.ioc.bean.Dept" >
         <property name="name" value="3"></property>
     </bean>
 

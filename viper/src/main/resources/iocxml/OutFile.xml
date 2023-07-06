@@ -10,7 +10,7 @@
 
     <context:property-placeholder location="config/application-dev.properties"></context:property-placeholder>
 
-    <bean id="outFile" class="com.summary.hml.viper.spring_study.ioc.out.OutFile">
+    <bean id="outFile" class="com.summary.hml.viper.springstudy.ioc.out.OutFile">
         <property name="name" value="${spring.environment.name}"/>
     </bean>
 

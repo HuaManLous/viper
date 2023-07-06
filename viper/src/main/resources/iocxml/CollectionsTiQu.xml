@@ -12,7 +12,7 @@
     </util:list>
 
 
-    <bean id="springIocCollectionsTiQu" class="com.summary.hml.viper.spring_study.ioc.bean.SpringIocCollections">
+    <bean id="springIocCollectionsTiQu" class="com.summary.hml.viper.springstudy.ioc.bean.SpringIocCollections">
         <property name="list" ref="utilList"></property>
     </bean>
 

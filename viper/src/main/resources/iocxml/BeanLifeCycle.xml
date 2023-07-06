@@ -5,12 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 练习spring bean 生命周期-->
-    <bean id="beanLifeCycle" class="com.summary.hml.viper.spring_study.ioc.bean.BeanLifeCycle" init-method="initMethod" destroy-method="destroyMethod">
+    <bean id="beanLifeCycle" class="com.summary.hml.viper.springstudy.ioc.bean.BeanLifeCycle" init-method="initMethod" destroy-method="destroyMethod">
         <property name="name" value="张三">
         </property>
     </bean>
 
-    <bean id="myBeanPostProcessor" class="com.summary.hml.viper.spring_study.ioc.bean.MyBeanPostProcessor">
+    <bean id="myBeanPostProcessor" class="com.summary.hml.viper.springstudy.ioc.bean.MyBeanPostProcessor">
     </bean>
 
 </beans>

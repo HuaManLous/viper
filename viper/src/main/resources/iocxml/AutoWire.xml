@@ -9,13 +9,13 @@
             byName: 按照属性名称自动装配，ID对应的名称要和属性名称一致
             byType: 按照属性类型自动装配，有多个类型时会报错
     -->
-    <bean id="autoWireA" class="com.summary.hml.viper.spring_study.ioc.autowire.AutoWireA" autowire="byName"/>
+    <bean id="autoWireA" class="com.summary.hml.viper.springstudy.ioc.autowire.AutoWireA" autowire="byName"/>
 
-    <bean id="autoWireB" class="com.summary.hml.viper.spring_study.ioc.autowire.AutoWireB">
+    <bean id="autoWireB" class="com.summary.hml.viper.springstudy.ioc.autowire.AutoWireB">
         <property name="name" value="自动装配"/>
     </bean>
 
-    <bean id="autoWireB2" class="com.summary.hml.viper.spring_study.ioc.autowire.AutoWireB">
+    <bean id="autoWireB2" class="com.summary.hml.viper.springstudy.ioc.autowire.AutoWireB">
         <property name="name" value="自动装配"/>
     </bean>
 

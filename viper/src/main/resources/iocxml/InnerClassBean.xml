@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 注入内部bean -->
-    <bean id="emp" class="com.summary.hml.viper.spring_study.ioc.bean.Emp">
+    <bean id="emp" class="com.summary.hml.viper.springstudy.ioc.bean.Emp">
         <property name="love">
             <list>
                 <value>读书</value>
@@ -15,7 +15,7 @@
           <property name="name" value="张三"></property>
           <property name="age" value="18"></property>
           <property name="dept">
-              <bean id="dept" class="com.summary.hml.viper.spring_study.ioc.bean.Dept">
+              <bean id="dept" class="com.summary.hml.viper.springstudy.ioc.bean.Dept">
                   <property name="name" value="安保部"></property>
                   <property name="address" value="B座2楼"></property>
               </bean>

@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 注入外部bean -->
-    <bean id="userService" class="com.summary.hml.viper.spring_study.ioc.service.UserService">
+    <bean id="userService" class="com.summary.hml.viper.springstudy.ioc.service.UserService">
         <property name="userDao" ref="userDaoImpl"></property>
     </bean>
 
-    <bean id="userDaoImpl" class="com.summary.hml.viper.spring_study.ioc.dao.UserDaoImpl"></bean>
+    <bean id="userDaoImpl" class="com.summary.hml.viper.springstudy.ioc.dao.UserDaoImpl"></bean>
 
 
 </beans>

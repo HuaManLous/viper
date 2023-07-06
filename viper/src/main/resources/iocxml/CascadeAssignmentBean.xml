@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 1 级联赋值 -->
-    <bean id="emp" class="com.summary.hml.viper.spring_study.ioc.bean.Emp">
+    <bean id="emp" class="com.summary.hml.viper.springstudy.ioc.bean.Emp">
         <property name="love">
             <list>
                 <value>读书</value>
@@ -17,7 +17,7 @@
           <property name="dept" ref="dept"></property>
     </bean>
 
-    <bean id="dept" class="com.summary.hml.viper.spring_study.ioc.bean.Dept">
+    <bean id="dept" class="com.summary.hml.viper.springstudy.ioc.bean.Dept">
         <property name="name" value="1.级联赋值name"></property>
         <property name="address" value="1.级联赋值address"></property>
     </bean>
@@ -25,10 +25,10 @@
   <!--   =======================================================================================================   -->
 
     <!-- 2 级联赋值 -->
-    <bean id="emp2" class="com.summary.hml.viper.spring_study.ioc.bean.Emp">
+    <bean id="emp2" class="com.summary.hml.viper.springstudy.ioc.bean.Emp">
         <property name="dept" ref="dept2"></property>
         <property name="dept.name" value="2.级联赋值.财务部门"></property>
     </bean>
 
-    <bean id="dept2" class="com.summary.hml.viper.spring_study.ioc.bean.Dept"></bean>
+    <bean id="dept2" class="com.summary.hml.viper.springstudy.ioc.bean.Dept"></bean>
 </beans>

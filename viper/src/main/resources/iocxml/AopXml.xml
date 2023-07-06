@@ -11,13 +11,13 @@
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-    <bean id="bookXml" class="com.summary.hml.viper.spring_study.aop.aopxml.BookXml" />
+    <bean id="bookXml" class="com.summary.hml.viper.springstudy.aop.aopxml.BookXml" />
 
-    <bean id="bookXmlProxy" class="com.summary.hml.viper.spring_study.aop.aopxml.BookXmlProxy" />
+    <bean id="bookXmlProxy" class="com.summary.hml.viper.springstudy.aop.aopxml.BookXmlProxy" />
 
     <aop:config>
         <!-- 切入点 -->
-        <aop:pointcut id="p" expression="execution(* com.summary.hml.viper.spring_study.aop.aopxml.BookXml.add(..))"/>
+        <aop:pointcut id="p" expression="execution(* com.summary.hml.viper.springstudy.aop.aopxml.BookXml.add(..))"/>
         <!-- 切面 -->
         <aop:aspect ref="bookXmlProxy">
             <!-- 增强在具体的方法上 -->
