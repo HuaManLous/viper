@@ -27,17 +27,4 @@ public class UserRequest {
 
     private int age;
 
-    public static void main(String[] args) {
-      String str = "18338354114";
-      if (str.startsWith("测试")) {
-          System.out.println("str = " + str);
-      }
-        System.out.println("2 = " + 2);
-
-
-        System.out.println("10000" + str.substring(5));
-
-    }
-
-
 }
