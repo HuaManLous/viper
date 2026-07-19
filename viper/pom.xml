@@ -101,6 +101,12 @@
             <version>1.2.28</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+
         <!-- 阿里系的Druid依赖包 -->
         <dependency>
             <groupId>com.alibaba</groupId>
